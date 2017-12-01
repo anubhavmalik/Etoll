@@ -3,6 +3,8 @@ package com.anubhavmalikdeveloper.e_toll;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,13 +18,26 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+   private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private String pageTitle[]={"Book a Trip now","QR Code"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+viewPager=findViewById(R.id.viewPager);
+       tabLayout=(TabLayout)findViewById(R.id.tab_layout);
+       for(int i=0;i<2;i++){
+           tabLayout.addTab(tabLayout.newTab().setText(pageTitle[i]));
+       }
 
+       tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+       // viewPager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener) new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
