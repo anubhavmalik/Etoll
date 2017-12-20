@@ -39,10 +39,9 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.Black));
 
-
         ViewPagerAdap viewPagerAdap=new ViewPagerAdap(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdap);
-        // viewPager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener) new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+         viewPager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener) new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
