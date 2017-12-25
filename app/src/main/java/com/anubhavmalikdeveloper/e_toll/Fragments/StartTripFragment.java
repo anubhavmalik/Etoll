@@ -18,8 +18,8 @@ public class StartTripFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        //return super.onCreateView(inflater, container, savedInstanceState);
-View view=inflater.inflate(R.layout.start_trip_fragment_layout,container,false);
-return view;
+        View view=inflater.inflate(R.layout.start_trip_fragment_layout,container,false);
+        return view;
 
     }
 }
